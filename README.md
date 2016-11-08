@@ -1,2 +1,0 @@
-# BiiCai
-New.index
