@@ -92,8 +92,6 @@ class api_promotion extends StoreadminbaseApp{
             $cache_server = & cache_server();
             $cache_server->clear();
 
-
-            );
         Response::json(200, 'OK');
     }
 
