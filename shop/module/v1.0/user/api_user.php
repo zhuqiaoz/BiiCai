@@ -76,7 +76,13 @@ class api_user extends MemberApp{
         $tuijian_id = trim($args_data['recommCode']);
         $imageCode = trim($args_data['imageCode']);
         $phoneCode = trim($args_data['phoneCode']);
-        
+        //20161212 pospal
+		$pospal_customerUid = strval($args_data['pospal_customerUid']);
+		$pospal_number = trim($args_data['pospal_number']);
+		$pospal_point = trim($args_data['pospal_point']);
+		$pospal_discount = trim($args_data['pospal_discount']);
+		$pospal_balance = trim($args_data['pospal_balance']);
+		$pospal_address = trim($args_data['pospal_address']);
         // 图片验证码
 //         $code = $this->check_captcha($imageCode);
 //         if($code != 200){
@@ -84,7 +90,7 @@ class api_user extends MemberApp{
 //         }
 
         $ms = & ms(); //连接用户中心
-        $user_id = $ms->user->register($user_name, $password, $email, $phone_mob, $tuijian_id);
+        $user_id = $ms->user->register($user_name, $password, $email, $phone_mob, $tuijian_id,$pospal_customerUid,$pospal_number,$pospal_point,$pospal_discount,$pospal_balance,$pospal_address);
         if($user_id == null){
             return array('code' => 404, 'message' => '注册邮箱已使用');
         }
